@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
+
+#%%
 from training_model import training_11_fold
 from plot_result import pltxd_test_result,pltyd_test_result,surface_domain_poly,pltxd_test_result_contrast,pltyd_test_result_contrast
 from read_data import read_data
@@ -30,5 +32,4 @@ def train_result_contras_plot(force):
 if __name__=='__main__':
     df_minmax, DF, dfL, dfH = read_data()
     train_result_plot('CFv','polynomial') #这个函数可直接更改为nn或者polynomial，可直接更改CFv和CFr
-    train_result_contras_plot('CFr')#这个函数可直接更改是CFv还是CFr
-
+    # train_result_contras_plot('CFr')#这个函数可直接更改是CFv还是CFr

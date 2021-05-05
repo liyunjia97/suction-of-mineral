@@ -581,7 +581,7 @@ def surface_domain_poly(DF,df_minmax,force,machine_model):
     ax.clabel(C, inline=True, colors='k', fontsize=20)
     plt.xticks(fontsize=20)
     plt.yticks(fontsize=20)
-    fig.colorbar(ax0,fontsize=20)
+    fig.colorbar(ax0)
     plt.xlabel('x/d',fontsize=20)
     plt.ylabel('y/d',fontsize=20)
     if force=='CFv':
