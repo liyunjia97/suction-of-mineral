@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68490d70-f3f2-45c4-b89c-7bb8abddabff" name="Default Changelist" comment="try" />
+    <list default="true" id="68490d70-f3f2-45c4-b89c-7bb8abddabff" name="Default Changelist" comment="try">
+      <change beforePath="$PROJECT_DIR$/training_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_model.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,7 +230,7 @@
       <workItem from="1619862248408" duration="16509000" />
       <workItem from="1619931048138" duration="18971000" />
       <workItem from="1620127360678" duration="4011000" />
-      <workItem from="1620181979933" duration="10530000" />
+      <workItem from="1620181979933" duration="11166000" />
     </task>
     <task id="LOCAL-00001" summary="矿石抽吸受力预测">
       <created>1620188193144</created>
