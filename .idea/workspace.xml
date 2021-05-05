@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68490d70-f3f2-45c4-b89c-7bb8abddabff" name="Default Changelist" comment="try">
+    <list default="true" id="68490d70-f3f2-45c4-b89c-7bb8abddabff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data_process_from_cfd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/模型计算.py" beforeDir="false" afterPath="$PROJECT_DIR$/模型计算.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +83,9 @@
     <configuration name="模型计算" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="D:\SOFTWEAR_H\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -235,7 +236,8 @@
       <workItem from="1620127360678" duration="4011000" />
       <workItem from="1620181979933" duration="11166000" />
       <workItem from="1620204259369" duration="959000" />
-      <workItem from="1620205226887" duration="211000" />
+      <workItem from="1620205226887" duration="637000" />
+      <workItem from="1620209651050" duration="2911000" />
     </task>
     <task id="LOCAL-00001" summary="矿石抽吸受力预测">
       <created>1620188193144</created>
@@ -265,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620188477084</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="try">
+      <created>1620205623113</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620205623113</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +307,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="矿石抽吸受力预测整体数据和预测结果" />
     <MESSAGE value="矿石抽吸受力预测" />
-    <option name="LAST_COMMIT_MESSAGE" value="矿石抽吸受力预测" />
+    <MESSAGE value="try" />
+    <option name="LAST_COMMIT_MESSAGE" value="try" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/suction_of_mineral$.coverage" NAME="多项式回归 Coverage Results" MODIFIED="1619876469138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
