@@ -29,6 +29,6 @@ def train_result_contras_plot(force):
     pltyd_test_result_contrast(DF, df_minmax, DF_test_polynomial, DF_test_nn, force)
 if __name__=='__main__':
     df_minmax, DF, dfL, dfH = read_data()
-    train_result_plot('CFv','nn') #这个函数可直接更改为nn或者polynomial，可直接更改CFv和CFr
+    train_result_plot('CFv','polynomial') #这个函数可直接更改为nn或者polynomial，可直接更改CFv和CFr
     train_result_contras_plot('CFr')#这个函数可直接更改是CFv还是CFr
 
