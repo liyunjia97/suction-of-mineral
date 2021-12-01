@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#%%
 import pandas as pd
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures
@@ -11,6 +12,7 @@ from keras.layers.core import Dense
 from keras.layers import  Input
 from keras.models import Model
 from keras.optimizers import Adam
+#%%
 
 def  Bayesian_optimize_poly(df_minmax,force):
     '''
@@ -231,6 +233,8 @@ def training_11_fold(DF,df_minmax,force,machine_model):
     mse_test_list = []
     mae_test_list = []
     me_test_list = []
+    relative_error_data_list=[]
+    relative_error_test_list=[]
     for i in range(len(ref_list)):
         if i < 4:
             df1 = df_minmax[df_minmax['x/d'] != ref_list[i]]
@@ -256,16 +260,16 @@ def training_11_fold(DF,df_minmax,force,machine_model):
                                           shuffle=True)
                 y_test_predict = final_model.predict(X_test)
                 y_data_predict = final_model.predict(X_data)
-            # print(pd.DataFrame(X_test))
-            # print(pd.Series(y_test_predict.flatten()))
-            df_test = pd.concat([pd.DataFrame(X_test), pd.Series(y_test_predict.flatten())], axis=1)
-            DF_test = DF_test.append(df_test)
+            df_data= pd.concat([pd.DataFrame(X_data), pd.Series(y_data.flatten()),pd.Series(y_data_predict.flatten())], axis=1)
+            df_data.columns=['x/d','y/d','y_true','y_predict']
+            df_test = pd.concat([pd.DataFrame(X_test), pd.Series(y_test.flatten()), pd.Series(y_test_predict.flatten())], axis=1)
+            df_test.columns=['x/d','y/d','y_true','y_predict']
 
+            DF_test = DF_test.append(df_test)
             y_test_predict = (y_test_predict - CFr_min) / (CFr_max - CFr_min)
             y_data_predict = (y_data_predict - CFr_min) / (CFr_max - CFr_min)
             y_data = (y_data - CFr_min) / (CFr_max - CFr_min)
             y_test = (y_test - CFr_min) / (CFr_max - CFr_min)
-
             mse_data = mean_squared_error(y_data, y_data_predict)
             mae_data = mean_absolute_error(y_data, y_data_predict)
             me_data = max_error(y_data, y_data_predict)
@@ -278,6 +282,31 @@ def training_11_fold(DF,df_minmax,force,machine_model):
             mse_test_list.append(mse_test)
             mae_test_list.append(mae_test)
             me_test_list.append(me_test)
+            if force=='CFv':
+                df_test1 = df_test[(df_test['x/d'] <= 0.5) & (df_test['y/d'] <= 0.5)]
+                df_data1 = df_data[(df_data['x/d'] <= 0.5) & (df_data['y/d'] <= 0.5)]
+            if force=='CFr':
+                df_test1 = df_test[(df_test['x/d'] >= 0.375)&(df_test['x/d'] <= 0.875) & (df_test['y/d'] <= 0.5)]
+                df_data1 = df_data[(df_data['x/d'] >= 0.375)&(df_data['x/d'] <= 0.875) & (df_data['y/d'] <= 0.5)]
+            y_test_predict1=np.array(df_test1['y_predict']).flatten()
+            y_test_true1 = np.array(df_test1['y_true']).flatten()
+            y_data_predict1=np.array(df_data1['y_predict']).flatten()
+            y_data_true1 = np.array(df_data1['y_true']).flatten()
+            relative_error_data=(y_data_predict1-y_data_true1)/y_data_true1
+            relative_error_test=(y_test_predict1-y_test_true1)/y_test_true1
+
+            relative_error_data=pd.DataFrame(relative_error_data).apply(abs)
+            relative_error_test = pd.DataFrame(relative_error_test).apply(abs)
+            relative_error_data=relative_error_data[relative_error_data[0]!=np.inf]
+            relative_error_test = relative_error_test[relative_error_test[0] != np.inf]
+            relative_error_data=np.array(np.array(relative_error_data).flatten())
+            relative_error_test = np.array(np.array(relative_error_test).flatten())
+            if len(relative_error_test)>0:
+                relative_error_test = max(relative_error_test)
+                relative_error_test_list.append(relative_error_test)
+            relative_error_data=max(relative_error_data)
+            relative_error_data_list.append(relative_error_data)
+
         if i >= 4:
             df1 = df_minmax[df_minmax['y/d'] != ref_list[i]]
             df2 = df_minmax[df_minmax['y/d'] == ref_list[i]]
@@ -302,7 +331,12 @@ def training_11_fold(DF,df_minmax,force,machine_model):
                                           shuffle=True)
                 y_test_predict = final_model.predict(X_test)
                 y_data_predict = final_model.predict(X_data)
-            df_test = pd.concat([pd.DataFrame(X_test), pd.Series(y_test_predict.flatten())], axis=1)
+
+            df_data= pd.concat([pd.DataFrame(X_data), pd.Series(y_data.flatten()),pd.Series(y_data_predict.flatten())], axis=1)
+            df_data.columns=['x/d','y/d','y_true','y_predict']
+            df_test = pd.concat([pd.DataFrame(X_test), pd.Series(y_test.flatten()), pd.Series(y_test_predict.flatten())], axis=1)
+            df_test.columns=['x/d','y/d','y_true','y_predict']
+
             DF_test = DF_test.append(df_test)
             y_test_predict = (y_test_predict - CFr_min) / (CFr_max - CFr_min)
             y_data_predict = (y_data_predict - CFr_min) / (CFr_max - CFr_min)
@@ -314,17 +348,44 @@ def training_11_fold(DF,df_minmax,force,machine_model):
             mse_test = mean_squared_error(y_test, y_test_predict)
             mae_test = mean_absolute_error(y_test, y_test_predict)
             me_test = max_error(y_test, y_test_predict)
+
+            if force=='CFv':
+                df_test1 = df_test[(df_test['x/d'] <= 0.5) & (df_test['y/d'] <= 0.5)]
+                df_data1 = df_data[(df_data['x/d'] <= 0.5) & (df_data['y/d'] <= 0.5)]
+            if force=='CFr':
+                df_test1 = df_test[(df_test['x/d'] >= 0.375)&(df_test['x/d'] <= 0.875) & (df_test['y/d'] <= 0.5)]
+                df_data1 = df_data[(df_data['x/d'] >= 0.375)&(df_data['x/d'] <= 0.875) & (df_data['y/d'] <= 0.5)]
+            y_test_predict1 = np.array(df_test1['y_predict']).flatten()
+            y_test_true1 = np.array(df_test1['y_true']).flatten()
+            y_data_predict1 = np.array(df_data1['y_predict']).flatten()
+            y_data_true1 = np.array(df_data1['y_true']).flatten()
+            relative_error_data = (y_data_predict1 - y_data_true1) / y_data_true1
+            relative_error_test = (y_test_predict1 - y_test_true1) / y_test_true1
+            relative_error_data=pd.DataFrame(relative_error_data).apply(abs)
+            relative_error_test = pd.DataFrame(relative_error_test).apply(abs)
+            relative_error_data=relative_error_data[relative_error_data[0]!=np.inf]
+            relative_error_test = relative_error_test[relative_error_test[0] != np.inf]
+            relative_error_test = np.array(np.array(relative_error_test).flatten())
+            if len(relative_error_test)>0:
+                relative_error_test = max(relative_error_test)
+                relative_error_test_list.append(relative_error_test)
+            relative_error_data=np.array(np.array(relative_error_data).flatten())
+            relative_error_data=max(relative_error_data)
             mse_data_list.append(mse_data)
             mae_data_list.append(mae_data)
             me_data_list.append(me_data)
             mse_test_list.append(mse_test)
             mae_test_list.append(mae_test)
             me_test_list.append(me_test)
-    DF_test.columns = ['x/d', 'y/d', force]
+            relative_error_data_list.append(relative_error_data)
+
+    DF_test.columns = ['x/d', 'y/d', 'y_true','y_predict']
     mse_data_mean=np.mean(mse_data_list)
     mae_data_mean=np.mean(mae_data_list)
     me_data_mean=np.mean(me_data_list)
     mse_test_mean=np.mean(mse_test_list)
     mae_test_mean=np.mean(mae_test_list)
     me_test_mean=np.mean(me_test_list)
-    return DF_test,mse_data_mean,mae_data_mean,me_data_mean,mse_test_mean,mae_test_mean,me_test_mean
+    relative_error_data_mean=np.mean(relative_error_data_list)
+    relative_error_test_mean=np.mean(relative_error_test_list)
+    return DF_test,mse_data_mean,mae_data_mean,me_data_mean,relative_error_data_mean,mse_test_mean,mae_test_mean,me_test_mean,relative_error_test_mean

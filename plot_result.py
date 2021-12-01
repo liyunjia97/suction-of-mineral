@@ -88,54 +88,54 @@ def pltxd_test_result_contrast(DF,df_minmax,DF_test_polynomial,DF_test_nn,force)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[4]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[4]][[force]]))))), s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[4]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[4]][[force]]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[4]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[4]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[4]][[force]]))))), s=0.05,marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[4]][['y_predict']]))))), s=0.05,marker='D', color='lawngreen',alpha=0.5)
 
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[5]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[5]][[force]]))))), s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[5]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[5]][[force]]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[5]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[5]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[5]][[force]]))))), s=0.05,marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[5]][['y_predict']]))))), s=0.05,marker='D', color='lawngreen',alpha=0.5)
 
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[6]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[6]][[force]]))))), s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[6]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[6]][[force]]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[6]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[6]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[6]][[force]]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[6]][['y_predict']]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[7]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[7]][[force]]))))), s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[7]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[7]][[force]]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[7]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[7]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[7]][[force]]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[7]][['y_predict']]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
 
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[8]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[8]][[force]]))))), s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[8]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[8]][[force]]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[8]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[8]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[8]][[force]]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[8]][['y_predict']]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
 
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[9]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[9]][[force]]))))), s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[9]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[9]][[force]]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[9]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[9]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[9]][[force]]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[9]][['y_predict']]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
 
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[10]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[10]][[force]]))))), s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[10]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[10]][[force]]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['y/d'] == ref_list1[10]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[10]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[10]][[force]]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['y/d'] == ref_list2[10]][['y_predict']]))))), s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
 
     color = ['darkorange', 'cornflowerblue','lawngreen']
@@ -207,32 +207,32 @@ def pltyd_test_result_contrast(DF,df_minmax,DF_test_polynomial,DF_test_nn,force)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[0]][['y/d']]))))),
         np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[0]][[force]]))))),s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[0]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[0]][[force]]))))),s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[0]][['y_predict']]))))),s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[0]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[0]][[force]]))))),s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[0]][['y_predict']]))))),s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[1]][['y/d']]))))),
         np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[1]][[force]]))))),s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[1]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[1]][[force]]))))),s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[1]][['y_predict']]))))),s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[1]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[1]][[force]]))))),s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[1]][['y_predict']]))))),s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
 
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[2]][['y/d']]))))),
         np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[2]][[force]]))))),s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[2]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[2]][[force]]))))),s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[2]][['y_predict']]))))),s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[2]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[2]][[force]]))))),s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[2]][['y_predict']]))))),s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
 
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[3]][['y/d']]))))),
         np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[3]][[force]]))))),s=0.05, marker='D', color='darkorange',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[3]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[3]][[force]]))))),s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_polynomial[DF_test_polynomial['x/d'] == ref_list1[3]][['y_predict']]))))),s=0.05, marker='D', color='cornflowerblue',alpha=0.5)
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[3]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[3]][[force]]))))),s=0.05, marker='D', color='lawngreen',alpha=0.5)
+                np.array(list(map(inverse_transZ, list(np.array(DF_test_nn[DF_test_nn['x/d'] == ref_list2[3]][['y_predict']]))))),s=0.05, marker='D', color='lawngreen',alpha=0.5)
 
     color = ['darkorange', 'cornflowerblue','lawngreen']
     labels = ['真实值', '多项式回归预测值','神经网络预测值']
@@ -291,31 +291,31 @@ def pltxd_test_result(DF,df_minmax,DF_test,force):
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[4]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[4]][[force]]))))), s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test[DF_test['y/d'] == ref_list1[4]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[4]][[force]]))))), s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[4]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[5]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[5]][[force]]))))), s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test[DF_test['y/d'] == ref_list1[5]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[5]][[force]]))))), s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[5]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[6]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[6]][[force]]))))), s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test[DF_test['y/d'] == ref_list1[6]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[6]][[force]]))))), s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[6]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[7]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[7]][[force]]))))), s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test[DF_test['y/d'] == ref_list1[7]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[7]][[force]]))))), s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[7]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[8]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[8]][[force]]))))), s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test[DF_test['y/d'] == ref_list1[8]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[8]][[force]]))))), s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[8]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[9]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[9]][[force]]))))), s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test[DF_test['y/d'] == ref_list1[9]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[9]][[force]]))))), s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[9]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[10]][['x/d']]))))),
                 np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['y/d'] == ref_list[10]][[force]]))))), s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transX, list(np.array(DF_test[DF_test['y/d'] == ref_list1[10]][['x/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[10]][[force]]))))), s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['y/d'] == ref_list1[10]][['y_predict']]))))), s=0.05, marker='D', color='cornflowerblue')
 
 
     color = ['darkorange', 'cornflowerblue']
@@ -375,22 +375,22 @@ def pltyd_test_result(DF,df_minmax,DF_test,force):
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[0]][['y/d']]))))),
         np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[0]][[force]]))))),s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test[DF_test['x/d'] == ref_list1[0]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['x/d'] == ref_list1[0]][[force]]))))),s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['x/d'] == ref_list1[0]][['y_predict']]))))),s=0.05, marker='D', color='cornflowerblue')
 
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[1]][['y/d']]))))),
         np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[1]][[force]]))))),s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test[DF_test['x/d'] == ref_list1[1]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['x/d'] == ref_list1[1]][[force]]))))),s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['x/d'] == ref_list1[1]][['y_predict']]))))),s=0.05, marker='D', color='cornflowerblue')
 
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[2]][['y/d']]))))),
         np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[2]][[force]]))))),s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test[DF_test['x/d'] == ref_list1[2]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['x/d'] == ref_list1[2]][[force]]))))),s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['x/d'] == ref_list1[2]][['y_predict']]))))),s=0.05, marker='D', color='cornflowerblue')
 
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[3]][['y/d']]))))),
         np.array(list(map(inverse_transZ, list(np.array(df_minmax[df_minmax['x/d'] == ref_list[3]][[force]]))))),s=0.05, marker='D', color='darkorange')
     plt.scatter(np.array(list(map(inverse_transY, list(np.array(DF_test[DF_test['x/d'] == ref_list1[3]][['y/d']]))))),
-                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['x/d'] == ref_list1[3]][[force]]))))),s=0.05, marker='D', color='cornflowerblue')
+                np.array(list(map(inverse_transZ, list(np.array(DF_test[DF_test['x/d'] == ref_list1[3]][['y_predict']]))))),s=0.05, marker='D', color='cornflowerblue')
 
     color = ['darkorange', 'cornflowerblue']
     labels = ['真实值', '预测值']
